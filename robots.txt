@@ -1,4 +1,47 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://soccervise.com/sitemap.xml
+Sitemap:  https://soccervise.com/sitemap.xml
+
+Crawl-delay: 10
+
+# Disallow specific directories
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /tmp/
+
+# Disallow URLs with specific query parameters
+Disallow: /*?type=
+Disallow: /*?page=
+Disallow: /*?dt=
+Disallow: /*?date=
+
+# Disallow URLs with index.php in the path
+Disallow: /*index.html
+
+# Specific user-agent rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: BadBot
+Disallow: /
+
+# Disallow sessionid and sort query parameters
+Disallow: /*?sessionid=
+Disallow: /*?sort=
+
+# Allow specific file types
+User-agent: *
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.xml$
+Allow: /*.json$
+Allow: /*.txt$
